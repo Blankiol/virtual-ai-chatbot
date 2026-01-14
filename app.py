@@ -1,4 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+import os
+import asyncio
+import re
+import edge_tts
+from flask import Flask, render_template, request, jsonify, send_file
 from openai import OpenAI
 
 app = Flask(__name__)
@@ -8,6 +12,14 @@ client = OpenAI(
     base_url="http://localhost:11434/v1",
     api_key="ollama"
 )
+
+# [설정] 목소리 타입 (한국어 여성: ko-KR-SunHiNeural 추천)
+VOICE = "ko-KR-SunHiNeural" 
+OUTPUT_FILE = "static/voice.mp3" # 저장될 파일 위치
+
+# static 폴더가 없으면 만들기
+if not os.path.exists('static'):
+    os.makedirs('static')
 
 
 @app.route('/')
@@ -58,6 +70,46 @@ def chat():
     except Exception as e:
         print(f"❌ 에러 발생: {e}")
         return jsonify({'error': str(e)}), 500
+
+
+# ======================================================
+# [TTS 기능]
+# ======================================================
+@app.route('/tts', methods=['POST'])
+def tts_generate():
+    data = request.json
+    text = data.get('text')
+    
+    if not text:
+        return jsonify({'error': '텍스트가 없습니다.'}), 400
+
+    # 이모티콘이나 감정 태그([Happy])는 읽으면 이상하니까 제거하는 게 좋습니다.
+    # (간단하게 구현하기 위해 여기서는 생략하지만, 추후 제거 로직 추가 추천)
+
+    try:
+        # 정규표현식: 대괄호[]와 그 안의 글자를 찾아서 삭제함
+        clean_text = re.sub(r'\[.*?\]', '', text).strip()
+
+        # 텍스트가 비어버리면(태그만 있었을 경우) 기본값 설정
+        if not clean_text:
+            clean_text = "..."
+        
+        print(f"🗣️ 읽을 텍스트: {clean_text}") # 확인용 로그
+
+        # 비동기 함수 실행
+        asyncio.run(generate_audio(clean_text))
+        
+        # 만들어진 파일을 Unity로 보냄
+        return send_file(OUTPUT_FILE, mimetype="audio/mpeg")
+    
+    except Exception as e:
+        print(f"❌ TTS 에러: {e}")
+        return jsonify({'error': str(e)}), 500
+
+# 실제로 음성 파일을 만드는 함수
+async def generate_audio(text):
+    communicate = edge_tts.Communicate(text, VOICE)
+    await communicate.save(OUTPUT_FILE)
 
 # ======================================================
 # [중요] 서버 실행 코드는 파일의 '맨 마지막'에 두는 것이 정석입니다.
