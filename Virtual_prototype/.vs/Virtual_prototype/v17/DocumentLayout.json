@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\\uAE40\uACBD\uBBFC\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\V\\virtual-ai-chatbot\\Virtual_prototype\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{623263CF-557E-4AE3-5099-A7A6F6861C62}|Assembly-CSharp.csproj|c:\\users\\\uAE40\uACBD\uBBFC\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\v\\virtual-ai-chatbot\\virtual_prototype\\assets\\avatarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{623263CF-557E-4AE3-5099-A7A6F6861C62}|Assembly-CSharp.csproj|c:\\users\\\uAE40\uACBD\uBBFC\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\v\\virtual-ai-chatbot\\virtual_prototype\\assets\\chatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{623263CF-557E-4AE3-5099-A7A6F6861C62}|Assembly-CSharp.csproj|solutionrelative:assets\\chatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{623263CF-557E-4AE3-5099-A7A6F6861C62}|Assembly-CSharp.csproj|C:\\Users\\\uAE40\uACBD\uBBFC\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\V\\virtual-ai-chatbot\\Virtual_prototype\\assets\\avatarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{623263CF-557E-4AE3-5099-A7A6F6861C62}|Assembly-CSharp.csproj|solutionrelative:assets\\avatarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -27,12 +31,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ChatManager.cs",
+              "DocumentMoniker": "C:\\Users\\\uAE40\uACBD\uBBFC\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\V\\virtual-ai-chatbot\\Virtual_prototype\\Assets\\ChatManager.cs",
+              "RelativeDocumentMoniker": "Assets\\ChatManager.cs",
+              "ToolTip": "C:\\Users\\\uAE40\uACBD\uBBFC\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\V\\virtual-ai-chatbot\\Virtual_prototype\\Assets\\ChatManager.cs",
+              "RelativeToolTip": "Assets\\ChatManager.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAswIgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T09:46:43.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AvatarManager.cs",
               "DocumentMoniker": "C:\\Users\\\uAE40\uACBD\uBBFC\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\V\\virtual-ai-chatbot\\Virtual_prototype\\Assets\\AvatarManager.cs",
               "RelativeDocumentMoniker": "Assets\\AvatarManager.cs",
               "ToolTip": "C:\\Users\\\uAE40\uACBD\uBBFC\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\V\\virtual-ai-chatbot\\Virtual_prototype\\Assets\\AvatarManager.cs",
               "RelativeToolTip": "Assets\\AvatarManager.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAcwB4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-13T06:59:22.48Z",
               "EditorCaption": ""
